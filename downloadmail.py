@@ -86,6 +86,13 @@ def download_all_mail(email, password, file):
 
     M.logout()
 
+    # Set the answered flag
+    c.execute("""UPDATE emails
+    SET answered = 1
+    WHERE message_id IN
+      (SELECT in_reply_to FROM emails
+       WHERE in_reply_to != '' AND labels like '%Sent%');""")
+
 def parse_arguments():
     from optparse import OptionParser
     import getpass
