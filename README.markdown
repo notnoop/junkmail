@@ -16,16 +16,14 @@ How to run
 
 1. Download your emails with `downloadmail.py` script
 
-    python -m downloadmail test@gmail.com
-
+        python -m downloadmail test@gmail.com
 The script would prompt you for your gmail password.  The script by default
 downloads all the emails dating back to beginning of 2010, and stores them
 into `mail.sql` file.
 
 2. Run the analyzer on the file:
 
-    python -m analyze mail.sql
-
+        python -m analyze mail.sql
 The script would show the most important features in determining which emails
 you have replied to so far.
 
